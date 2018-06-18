@@ -4,7 +4,6 @@ const fs = require('fs');
 const os = require('os');
 const perf = require('execution-time')();
 
-
 // assign promisify (read file from system)
 const readFileP = util.promisify(fs.readFile);
 
@@ -24,37 +23,16 @@ Promise.all([chapterOne, chapterTwo, chapterThree])
 		const fullStory = [data[0]].concat(data[1]).join();
 		let wordCount = fullStory.match(/mouse/gi).length;
 	
-		console.log(`2- The word "mouse" repeated ${wordCount} times in this story.\n\n`);
+		console.log(`1- Hello ${os.userInfo().username}, The word "mouse" repeated ${wordCount} times in this story.\n\n`);
 		console.log(`${fullStory}\n\n`);
 		console.log(`**** It took ${asyncTimerEnd} milliseconds to excute your code. *****\n\n`);
-
-
 	})
 	.catch((err) => {
 		throw err;
 });
 
-
 // measure excution time (END)
 let asyncTimerEnd = perf.stop().time;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*
